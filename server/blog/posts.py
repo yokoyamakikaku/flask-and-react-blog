@@ -54,9 +54,9 @@ def get_single(id):
     post = get_post(id)
     return jsonify(dict(post))
 
-@bp.route('/posts/<int:id>', methods=['UPDATE'])
+@bp.route('/posts/<int:id>', methods=['PUT'])
 @login_required
-def udpate(id):
+def update(id):
     title = request.json['title']
     body = request.json['body']
 

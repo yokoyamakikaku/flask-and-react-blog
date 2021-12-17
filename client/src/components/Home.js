@@ -113,7 +113,6 @@ function Post ({ post, onUpdated, onDeleted }) {
                 </div>
                 <div className="text-sm text-gray-800">{post.username}</div>
               </div>
-
             </div>
             {isEditable && (
               <div className="flex text-sm gap-2">
@@ -145,6 +144,7 @@ export default function Home () {
           {posts.map(post => <Post key={post.id} post={post} onUpdated={refresh} onDeleted={refresh} />)}
         </div>
       )}
+      <CreatePostForm onCreated={refresh} />
       {currentUser && <CreatePostForm onCreated={refresh} />}
     </div>
   )
